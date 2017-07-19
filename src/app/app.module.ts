@@ -5,15 +5,13 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {ServerComponent} from "./server/server.component";
 import { ServersComponent } from './servers/servers.component'
-import { AppAlert } from './alert/alert.component'
-import {myAlertas} from './Alertas/myalertas.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent,
-    AppAlert,
-    myAlertas
+    ServersComponent
+
 
   ],
   imports: [
