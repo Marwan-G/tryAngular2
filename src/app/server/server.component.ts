@@ -8,7 +8,6 @@ export class ServerComponent{
   ServerState: string = " offline  method" ;
   getServerState(){
     return this.ServerState;
-
   }
 
 }
