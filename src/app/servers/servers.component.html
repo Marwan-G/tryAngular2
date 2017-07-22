@@ -1,4 +1,15 @@
 <p>here we have three component selectors inside  component</p>
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add server</button>
-<p [innerText]="allowNewServer"></p>
+<label>Server name</label>
+<input type="text"
+ class="form-controler"
+ (input)="UpdateServerName($event)"/>
+ <p *ngIf="serverCreated"> server was created : server name is {{ServerName}}</p>
+<button
+ class="btn btn-primary"
+ [disabled]="!allowNewServer"
+ (click)="onCreateServer()">Add server</button>
+<p [innerText]="allowNewServer" ></p>
+<P>
+  {{serverCreationStatus}}
+</P>
 <app-server></app-server>
