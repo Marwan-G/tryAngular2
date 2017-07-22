@@ -1,4 +1,5 @@
 <h1> Our Server Component </h1>
-<p [ngStyle]="{backgroundColor: getColor()} ">
+<p [ngStyle]="{backgroundColor: getColor()} "
+[ngClass]="{online: ServerState==='online'}">
   the server with ID {{ServerId}} is  {{getServerState()}}
 </p>

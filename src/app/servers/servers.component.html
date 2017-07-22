@@ -15,5 +15,6 @@
   </button>
 <p [innerText]="allowNewServer" ></p>
 <P>{{serverCreationStatus}}</P>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let item of servers"> <p>
+{{item.servers}}
+</p></app-server>
