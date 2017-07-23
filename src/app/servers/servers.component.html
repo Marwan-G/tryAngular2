@@ -13,8 +13,17 @@
    [disabled]="!allowNewServer"
    (click)="onCreateServer()">Add server
   </button>
+  <button class="btn btn-primary" (click)= "ToggleP($event)" >displaydetails</button>
+  <p *ngIf="ToggleStatus">
+    keep trying and never stop , I am acually facing the hardest moment in my life.
+    stop and cray or move on.
+  </p>
+  <ul>
+    <li *ngFor="let item of ToggleLog; let i = index"
+      [ngStyle]="{backgroundColor: i >=5 ? 'blue':'green'}"
+      [ngClass]="{'cssClass': i >=5}"
+     >{{i}}: {{item}}</li>
+ </ul>
 <p [innerText]="allowNewServer" ></p>
 <P>{{serverCreationStatus}}</P>
-<app-server *ngFor="let item of servers"> <p>
-{{item.servers}}
-</p></app-server>
+<app-server *ngFor="let item of servers"> </app-server>

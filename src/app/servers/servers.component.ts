@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
     ServerName: string ="Marwan";
     serverCreated: boolean = false;
     servers = ["server1", "server2"];
+    ToggleStatus: boolean = false;
+    ToggleLog: Array<string>=[];
 
   constructor() {
      setTimeout(()=>{
@@ -23,7 +25,6 @@ export class ServersComponent implements OnInit {
   }
 
   UpdateServerName(event: Event){
-    console.log(event)
     this.ServerName= (<HTMLInputElement>event.target).value;
   }
   onCreateServer(){
@@ -31,4 +32,12 @@ export class ServersComponent implements OnInit {
     this.servers.push(this.ServerName);
     this.serverCreationStatus=" Server was created " + this.ServerName ;
   }
-}
+  ToggleP(event){
+    this.ToggleLog.push(event.timeStamp);
+    console.log(this.ToggleLog);
+    this.ToggleStatus = !(this.ToggleStatus);
+  }
+  getColor(){
+    return this.ToggleLog.length >=5 ? 'blue':'green'
+    }
+  }
